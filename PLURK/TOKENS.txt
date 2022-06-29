@@ -1,0 +1,6 @@
+
+To generate a new token:
+    visit https://www.plurk.com/OAuth/test#/APP/Users/me
+
+
+
