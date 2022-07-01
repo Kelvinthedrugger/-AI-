@@ -28,6 +28,21 @@ model:
 
 """
 
+# from model import *  # developed in the ai repo (the fast.ai template one)
+# from matplotlib import pyplot as plt # for plot the user's result on the emo coordinate
+
+# helper functions
+
+def plotit():
+    pass
+
+
+
+
+# end of helper functions
+
+
+
 def main():
     pass
 
