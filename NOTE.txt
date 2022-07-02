@@ -1,0 +1,26 @@
+
+ This branch (name: trial) is for testing the scripts before 
+  merging them to branch::main
+
+
+
+
+
+ Stuff to do:
+    
+    1. a script for web-scraping Plurk (Chinese posts)
+
+
+
+    2. train a simple model (known architecture or build it ourself ?)
+
+
+
+ Very Advance:
+
+
+    light-weight the model for performance issue on edge device
+
+
+
+
