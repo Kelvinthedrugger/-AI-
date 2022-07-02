@@ -33,7 +33,7 @@ model:
 
 # helper functions
 
-def plotit():
+def plot_user_emotion():
     pass
 
 
