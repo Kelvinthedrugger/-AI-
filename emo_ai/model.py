@@ -61,7 +61,7 @@ class EmoModel(nn.Module):
         return self.classifier(hidden_states[0][:, 0, :])
 
 # Cell
-def get_pretrained_model(PATH):
+def get_pretrained_model(PATH, inference_only=True):
     if PATH[-3:] != ".pt" and PATH[-4:] != ".pth":
         print("Unable to load pretrained model")
         return None
@@ -74,6 +74,7 @@ def get_pretrained_model(PATH):
 
     checkpoint = torch.load(PATH)
     model.load_state_dict(checkpoint['model_state_dict'])
-    optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    if inference_only == False:
+        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
     model.eval() # or model.train()
     return model
