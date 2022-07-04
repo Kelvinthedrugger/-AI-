@@ -1,5 +1,6 @@
 import os
 
+# kinda slow and dump but it works
 def write_lib(source, file):
     if file.startswith("_"):
         print("skip %s since it started with _" % file)
