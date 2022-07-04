@@ -1,8 +1,17 @@
 
- This branch (name: trial) is for testing the scripts before 
+ branch::trial is for testing the scripts before 
   merging them to branch::main
 
 
+ Tips: prevent disconnect problem on google colab
+     press f12 key
+     paste the following code
+
+     function ClickConnect(){
+        console.log("Working");
+        document.querySelector("#top-toolbar > colab-connect-button").shadowRoot.querySelector("#connect").click();
+        }
+     setInterval(ClickConnect,60000)
 
 
 
