@@ -105,10 +105,13 @@ def get_pretrained_model(PATH, inference_only=True):
     # lr: learning rate, adjustable
     optimizer = AdamW(model.parameters(), lr=0.0001)
 
-    checkpoint = torch.load(PATH)
-    model.load_state_dict(checkpoint['model_state_dict'])
-    if inference_only == False:
+    if inference_only:
+        model.load_state_dict(PATH)
+    else:
+        checkpoint = torch.load(PATH)
+        model.load_state_dict(checkpoint['model_state_dict'])
         optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+
     model.eval() # or model.train()
     return model
 
