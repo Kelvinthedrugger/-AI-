@@ -102,13 +102,14 @@ def get_pretrained_model(PATH, inference_only=True):
     # model = EmoModel(AutoModelWithLMHead.from_pretrained("distilroberta-base").base_model, len(emotions))
     # see above cell: emotions = ["sadness", "joy", "love", "anger", "fear", "surprise"]
     model = EmoModel(AutoModelWithLMHead.from_pretrained("distilroberta-base").base_model, 6)
-    # lr: learning rate, adjustable
-    optimizer = AdamW(model.parameters(), lr=0.0001)
+    checkpoint = torch.load(PATH)
 
     if inference_only:
-        model.load_state_dict(PATH)
+        # model would not be subscriptable
+        model.load_state_dict(checkpoint)
     else:
-        checkpoint = torch.load(PATH)
+        # lr: learning rate, adjustable
+        optimizer = AdamW(model.parameters(), lr=0.0001)
         model.load_state_dict(checkpoint['model_state_dict'])
         optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
