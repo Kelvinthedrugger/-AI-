@@ -1,6 +1,7 @@
 # backend APIs
 # connect to ai model, return output to frontend (unity, mobile, etc)
 # connect to database, and so on
+# refer to ../main.py also
 
 
 """
