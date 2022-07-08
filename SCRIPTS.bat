@@ -1,4 +1,5 @@
 @echo off
 
-GITHUB EMO_AI
+GITHUB EMO_AI && conda activate AI_sheng
+
 
