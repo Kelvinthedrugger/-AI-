@@ -35,8 +35,6 @@ def fetch(name,dataset_name='emotional.zip'):
 
     return dat
 
-
-
 # Cell
 import csv
 import numpy as np
