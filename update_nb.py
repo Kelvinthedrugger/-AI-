@@ -16,9 +16,9 @@ def write_nb(source, file):
     return True
 
 def setup():
-    if not os.path.isdir("emo_ds"):
-        os.system("mkdir %s" % "emo_ds")
-    os.chdir(os.getcwd() + "\emo_ds")
+    if not os.path.isdir("emo_nbs"):
+        os.system("mkdir %s" % "emo_nbs")
+    os.chdir(os.getcwd() + "\emo_nbs")
 
 def main():
     # change current directory to emo_ds directory
