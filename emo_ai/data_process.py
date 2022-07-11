@@ -3,12 +3,26 @@
 __all__ = ['get_tokenizer', 'convert_text_to_tensor', 'load_text_from_file']
 
 # Cell
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+# Cell
 def get_tokenizer(max_tokens=512):
     from tokenizers import ByteLevelBPETokenizer
     from tokenizers.processors import BertProcessing
+    # add error checking
+    voc_file = "tokenizer/vocab.json"
+    merg_file = "tokenizer/merges.txt"
+
+    import os.path
+    if not os.path.isfile(voc_file) or not os.path.isfile(merg_file):
+        from .model_api import setup_tokenizer
+        setup_tokenizer()
+
     t = ByteLevelBPETokenizer(
-        "tokenizer/vocab.json",
-        "tokenizer/merges.txt"
+        voc_file,
+        merg_file
     )
     t._tokenizer.post_processor = BertProcessing(
         ("</s>", t.token_to_id("</s>")),
