@@ -16,12 +16,12 @@ def write_nb(source, file):
     return True
 
 def setup():
-    if not os.path.isdir("emo_ai"):
-        os.system("mkdir %s" % "emo_ai")
-    os.chdir(os.getcwd() + "\emo_ai")
+    if not os.path.isdir("emo_ds"):
+        os.system("mkdir %s" % "emo_ds")
+    os.chdir(os.getcwd() + "\emo_ds")
 
 def main():
-    # change current directory to emo_ai directory
+    # change current directory to emo_ds directory
     setup()
     # retrieve all the libs from source
     lib_source = "C:" + chr(92) + "Users" + chr(92) + "Kelvin" + chr(92) + "Documents" + chr(92) + "GitHub" + chr(92) + "EMO_AI"
