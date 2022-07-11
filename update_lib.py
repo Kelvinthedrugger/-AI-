@@ -1,5 +1,6 @@
 import os
 
+# kinda slow and dump but it works
 def write_lib(source, file):
     if file.startswith("_"):
         print("skip %s since it started with _" % file)
@@ -27,6 +28,7 @@ def main():
     for src in lib_list:
         if not write_lib(lib_source + chr(92) + src, src):
             print("Failed")
+            exit(1)
     print("Success")
 
 if __name__ =="__main__":
