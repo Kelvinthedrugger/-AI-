@@ -58,7 +58,7 @@ label2int = {
 }
 
 # Cell
-def get_model(PATH, pretrained=True, inference_only=True, lr=0.0001, default_model=None):
+def get_model(PATH=".pt", pretrained=True, inference_only=True, lr=0.0001, default_model=None):
     if PATH[-3:] != ".pt" and PATH[-4:] != ".pth":
         print("Unable to load pretrained model")
         return None
