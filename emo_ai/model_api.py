@@ -99,13 +99,15 @@ def get_model(PATH, pretrained=True, inference_only=True, lr=0.0001, default_mod
 # Cell
 # save the pretrained token
 def load_tokenizer():
-    from tokenizers import AutoTokenizer
+    from transformers import AutoTokenizer
     tokenizer = AutoTokenizer.from_pretrained('distilroberta-base')
     # -p, --parent, no error if it exists, make parent directory as necessary
+    import os
     os.system("mkdir -p tokenizer")
     tokenizer.save_pretrained("tokenizer")
 
 def setup_tokenizer():
+    import os
     # if there's no previous file/record
     # should we check if there are missing files given that it's previously downloaded?
     if not os.path.isdir("tokenizer"):
@@ -142,6 +144,7 @@ def print_emotion(output, print_emo=True):
 def get_output(text, model, tokenizer=None, return_tensor=False, print_emo=False):
     # we should add try/Except error handling for "model" argument
     # , but i consider it to be ugly
+    from .data_process import convert_text_to_tensor
     import torch
     with torch.no_grad():
         model.eval()
