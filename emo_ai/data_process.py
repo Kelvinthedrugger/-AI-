@@ -8,6 +8,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 # Cell
+from functools import lru_cache
+@lru_cache(maxsize=4)
 def get_tokenizer(max_tokens=512):
     from tokenizers import ByteLevelBPETokenizer
     from tokenizers.processors import BertProcessing
