@@ -1,0 +1,17 @@
+
+API_KEY  = "jq5mU9ufmj6N"
+
+API_SECRET = "mNbClA7I1hbtsTM3uzCZMYcdQV1FtNMc"
+
+CONSUMER_KEY = "9DbsxQ4pYJ2X"
+
+CONSUMER_SECRET = "oTclzPIgUaKIWtQYbPhbMVyJUnWK1S85"
+
+
+"""
+API.keys:
+# this works
+{"CONSUMER_SECRET": "9DbsxQ4pYJ2X", "CONSUMER_KEY": "oTclzPIgUaKIWtQYbPhbMVyJUnWK1S85"}
+
+"""
+
