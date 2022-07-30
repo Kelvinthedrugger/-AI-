@@ -9,5 +9,6 @@ Account 1:
     tokens:
         Name: EMO_demo_0
         作者:	hardhardhard123
-        App secret / token: just login and you'll see
+        App key:	jq5mU9ufmj6N
+        App secret:	mNbClA7I1hbtsTM3uzCZMYcdQV1FtNMc
 
