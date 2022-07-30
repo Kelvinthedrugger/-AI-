@@ -7,6 +7,7 @@ Account 1:
     birthday: 1999/9/10
 
     tokens:
-        not yet, still digging in the documentation
-
+        Name: EMO_demo_0
+        作者:	hardhardhard123
+        App secret / token: just login and you'll see
 
