@@ -1,17 +1,11 @@
 
-API_KEY  = "jq5mU9ufmj6N"
+acc_info = {
+"CONSUMER_KEY":"jq5mU9ufmj6N",
+"CONSUMER_SECRET": "mNbClA7I1hbtsTM3uzCZMYcdQV1FtNMc",
+"API_KEY": "ltos2Uq9HQ9y",
+"API_SECRET": "HWVeZMuK3xOhSXXCZ2J7y28UFgiWG0XR",
 
-API_SECRET = "mNbClA7I1hbtsTM3uzCZMYcdQV1FtNMc"
+"ver_code": "914488"
+}
 
-CONSUMER_KEY = "9DbsxQ4pYJ2X"
-
-CONSUMER_SECRET = "oTclzPIgUaKIWtQYbPhbMVyJUnWK1S85"
-
-
-"""
-API.keys:
-# this works
-{"CONSUMER_SECRET": "9DbsxQ4pYJ2X", "CONSUMER_KEY": "oTclzPIgUaKIWtQYbPhbMVyJUnWK1S85"}
-
-"""
 
