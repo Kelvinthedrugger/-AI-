@@ -15,7 +15,7 @@ def main(use_file=False):
 
     else:
         plurk = PlurkAPI(acc_info["CONSUMER_KEY"], acc_info["CONSUMER_SECRET"])
-        plurk = PlurkAPI(acc_info["API_KEY"], acc_info["API_SECRET"])
+        plurk.authorize(acc_info["API_KEY"], acc_info["API_SECRET"])
         print(plurk.callAPI('/APP/Profile/getOwnProfile'))
         print(plurk.callAPI('/APP/Timeline/getPlurk',options={"plurk_id": 16675741}))
 

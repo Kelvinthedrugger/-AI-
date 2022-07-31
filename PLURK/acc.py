@@ -5,7 +5,8 @@ acc_info = {
 "API_KEY": "ltos2Uq9HQ9y",
 "API_SECRET": "HWVeZMuK3xOhSXXCZ2J7y28UFgiWG0XR",
 
-"ver_code": "914488"
+"ver_code": 914488,
+"user_id": 16675741
 }
 
 
