@@ -10,8 +10,19 @@ Account 1:
     tokens:
         Name: EMO_demo_0
         作者:	hardhardhard123
-        App key:	jq5mU9ufmj6N
-        App secret:	mNbClA7I1hbtsTM3uzCZMYcdQV1FtNMc
+        Consumer_key:	jq5mU9ufmj6N
+        Consumer_secret:	mNbClA7I1hbtsTM3uzCZMYcdQV1FtNMc
+
+
+### To request a token:
+        
+[Plurk OAuth service endpoints](https://www.plurk.com/API/2):
+
+obtain request token: https://www.plurk.com/OAuth/request_token (HTTPS GET/POST)
+authorization page: https://www.plurk.com/OAuth/authorize
+authorization page for mobile: https://www.plurk.com/m/authorize
+obtain access token: https://www.plurk.com/OAuth/access_token (HTTPS GET/POST)
+
 
 ### Steps
 

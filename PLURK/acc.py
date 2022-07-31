@@ -1,4 +1,4 @@
-
+# not sure if it's a permanent key, we should try to do that
 acc_info = {
 "CONSUMER_KEY":"jq5mU9ufmj6N",
 "CONSUMER_SECRET": "mNbClA7I1hbtsTM3uzCZMYcdQV1FtNMc",
