@@ -22,13 +22,13 @@ It now works!
 
 To fetch newest data, just run
 
-'''python
+```python
 # inside Plurk folder
 from plurk import *
 content = fetch_emoji(emoji='your emoji')
 for ele in content: print(ele)
 "For more info, see Plurk folder"
-'''
+```
 
 
 ### twitter dataset
