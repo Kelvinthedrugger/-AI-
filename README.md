@@ -24,7 +24,7 @@ To fetch newest data, just run
 
 ```python
 # inside Plurk folder
-from plurk import *
+from plurk.all import *
 content = fetch_emoji(emoji='your emoji')
 for ele in content: print(ele)
 "For more info, see Plurk folder"
