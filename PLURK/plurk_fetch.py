@@ -25,10 +25,18 @@
 
 """
 
-
+# Check visit limit!
+#   Search: emojis
+#   fetch top 20 posts (since it's a tryout, see how to set fetch limit as well
+#   save it, in case the visit limit reaches, change to save once every 500 posts
 
 
 def main():
+    # loop thru emojis ## 6 categories
+    #   search the emoji
+    #   fetch xxx (500) posts, some constrain like "visit 20 posts tops at a time"?
+    #   save them
+
     pass
 
 
