@@ -4,9 +4,11 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"write_fetch_result": "02_fetch_emoji.ipynb",
          "fetch_emoji": "02_fetch_emoji.ipynb",
-         "list_out_existing_filenames_of_plurks": "02_fetch_emoji.ipynb"}
+         "list_out_existing_filenames_of_plurks": "02_fetch_emoji.ipynb",
+         "func1": "03_fetch_utils.ipynb"}
 
-modules = ["fetch_emoji.py"]
+modules = ["fetch_emoji.py",
+           "utils.py"]
 
 doc_url = "https://Kelvinthedrugger.github.io/plurk/"
 
