@@ -1,2 +1,2 @@
-from fetch_emoji import *
-from utils import *
+from plurk.fetch_emoji import *
+from plurk.utils import *
