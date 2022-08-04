@@ -4,8 +4,6 @@
 """
 #useful APIs
 
-/APP/FriendsFans/getxxxByOffset: If only you have friends/fans/following
-
 /APP/Profile/getPublicProfile
     require: user_id; use "search" to get this
 
@@ -16,12 +14,10 @@
 
 /APP/PlurkSearch/search: search plurks (not sure what "plurk" means, ~20)
     require: query after users
-
-/APP/UserSearch/search: search users (~10)
-    require: query after users
+    problem!: can't get posts more than 30 (i want all the posts that has emojis)
 
 
-/APP/Emoticons/get: get emoji's
+/APP/Emoticons/get: get emoji's: i didn't found this helpful
 
 """
 
