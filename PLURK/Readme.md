@@ -19,7 +19,7 @@ see bottom of [04_selenium.ipynb](https://github.com/Kelvinthedrugger/-AI-/blob/
 
 // this is better!
 
-see [fix_0805.ipynb] (https://github.com/Kelvinthedrugger/-AI-/blob/main/PLURK/fix_0805.ipynb)
+see [fix_0805.ipynb](https://github.com/Kelvinthedrugger/-AI-/blob/main/PLURK/fix_0805.ipynb)
 
 
 ### Stable posts on plurk
