@@ -1,5 +1,5 @@
 
-Account 1:
+### Account 1:
 
     name:     hardhardhard123
     password  suckmaid456
@@ -13,6 +13,27 @@ Account 1:
         Consumer_key:	jq5mU9ufmj6N
         Consumer_secret:	mNbClA7I1hbtsTM3uzCZMYcdQV1FtNMc
 
+## Selenium (better)
+
+see bottom of [04_selenium.ipynb](https://github.com/Kelvinthedrugger/-AI-/blob/main/PLURK/04_use_selenium.ipynb)
+
+Steps:
+   
+    decide the emoji
+
+    go to the search page & select end of date (normally 2022-8) and emoji
+
+        e.g.,
+        emoji: 😂; date: 2022-8
+        
+        https://www.plurk.com/search?q=%F0%9F%98%82&date=2022-08
+
+    check folder & file name
+
+    run the notebook
+
+
+## Plurk API
 
 ### To request a token:
         
