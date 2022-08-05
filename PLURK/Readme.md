@@ -19,8 +19,27 @@ see bottom of [04_selenium.ipynb](https://github.com/Kelvinthedrugger/-AI-/blob/
 
 see [fix_0805.ipynb](https://github.com/Kelvinthedrugger/-AI-/blob/main/PLURK/fix_0805.ipynb) // this is better!
 
+see [create_dataset.ipynb](https://github.com/Kelvinthedrugger/-AI-/blob/main/PLURK/create_dataset.ipynb) // the whole thing together!
 
 ### Stable posts on plurk
+
+### load the whole dataset at once
+
+```python
+from pathlib import Path as P
+
+target_dir = P("total_dataset")
+target_file = target_dir/"dataset.pkl"
+
+with open(target_file, "rb") as f:
+    reload_f = pickle.load(f)
+
+print(len(reload_f), reload_f[0])
+
+# output:
+# (23510,
+ ('伴侶：臭貓貓 我玩遊戲的時候一直煩我，罵他還一直蹭我😡\n（還是伴侶）\n伴侶：我早上幫他乾洗澡後他就不讓我摸摸了😭', 'anger', '😡'))
+```
 
 #### stable_pkl/
 #### fix_0804/
