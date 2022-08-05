@@ -17,6 +17,46 @@
 
 see bottom of [04_selenium.ipynb](https://github.com/Kelvinthedrugger/-AI-/blob/main/PLURK/04_use_selenium.ipynb)
 
+### Stable posts on plurk
+
+#### stable_pkl/
+#### fix_0804/
+
+#### larger file size -> more posts!
+
+### Ways to read the files (.pkl, .pickle)
+
+```python
+"For example with context, see 'fix_0805.ipynb'"
+import os, pickle
+from pathlib import Path
+
+# enter the folder that you want
+dir_name = Path("the directory that you want")
+
+# get the files in that directory
+file_list = list(os.walk(dir_name))[0][2]
+
+# collect files here
+posts = []
+
+for ele in file_list:
+    # notice that each ele is a list, very easy to use
+    with open(dir_name/ele, "rb") as f:
+        posts.append(pickle.load(f))
+
+# check the content
+from info_list import emoji_list
+
+for ele in posts:
+    idx = ele.index(".")
+    if "_" in ele:
+        idx = ele.index("_")
+
+    print(emoji_list[:idx], ele[0]) 
+
+```
+
 Steps:
    
     decide the emoji
