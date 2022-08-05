@@ -57,7 +57,7 @@ for ele in posts:
 
 ```
 
-Steps:
+#### Steps to fetch emoji on Plurk
    
     decide the emoji
 
@@ -72,6 +72,23 @@ Steps:
 
     run the notebook
 
+
+#### Tips, login before you fetch allows you to view adult content (that's what they said on the website)
+```python
+driver.get("https://www.plurk.com/login?r=")
+#輸入帳密
+usr, pwd = input("account: "), input("password: ") 
+
+key1 = driver.find_element("id", "input_nick_name")
+key1.send_keys(usr)
+sleep(0.5)
+key2 = driver.find_element("id", "input_password")
+key2.send_keys(pwd)
+sleep(0.5)
+driver.find_element("id","login_submit").click()
+print("Login done!")
+
+```
 
 ## Plurk API
 
