@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>HERE are account infos</p>
+    <p>Current users: {{ length_accounts }}</p>
+    <table border=1>
+        {% for ele in accounts %}
+        <tr>
+            <th> {{ ele }} </th>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
