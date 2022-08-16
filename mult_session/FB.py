@@ -99,6 +99,9 @@ def logout_fb(username):
    lgout = driver.find_elements("xpath", "//*[@role='listitem']//*[@dir='auto']")
    lgout[-1].click()
    print("{} logged out!".format(username))
+   # remove driver from acc_driver
+   acc_driver.pop(username)
+   assert username not in acc_driver, "big trouble"
    return
 
 

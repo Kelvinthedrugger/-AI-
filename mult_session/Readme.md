@@ -25,21 +25,28 @@
 
 ### server: just run 'python -m http.server'
 
-### selenium for web crawling
-    fix multiple session problem
-        just use dict() to solve it ?!
-            ret = {}
-            # when user A login -> ret["userA"] = driver_a
-            # when user B login -> .. # the same
-            # when user A logout-> delete "userA" from ret
+### fix multiple session problem
 
-        WE NEED TO GET LOGIN WORKING (THE WHOLE APP) to actually solve this
+#### just use dict() to solve it ?!
+when user A login -> ret["userA"] = driver_a
 
+when user B login -> .. # the same
 
-    refresh problem (not that urgent but necessary)
+when user A logout-> delete "userA" from ret
 
-    Language (on FB) problem is just really annoying 
-     (affects xpath and so on)
+acc_driver = {} # {"username": driver_of_the_user}
+
+if the driver of the user is not removed, the login session won't be closed
+
+#### cons
+the UI is pretty ugly, requires the username (user account) for every action...
+
+try to came up with a better way to handle the backend
+
+refresh problem (not that urgent but necessary)
+
+Language (on FB) problem is just really annoying 
+ (affects xpath and so on)
 
 
 ### embed javascript in html if you're smart enough (?
