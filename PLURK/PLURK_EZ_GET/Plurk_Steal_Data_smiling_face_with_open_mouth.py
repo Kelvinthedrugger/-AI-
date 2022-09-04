@@ -42,7 +42,6 @@ basedir = Path("faces")
 # the crawler per se
 
 # init global post counter
-glb_counter = 0
 
 #自動化流程，跑這個就對了
 def run_it(face_idx):
@@ -96,7 +95,6 @@ def run_it(face_idx):
             pass
         t+=1
         print(t)
-    glb_counter += t
     with open(f"{basedir/filename}.json",'w', encoding = 'utf-8') as yyyyy:
         json.dump(final,yyyyy)
         yyyyy.close()
@@ -111,5 +109,4 @@ if __name__ == "__main__":
     # flushed, tired
     for face_idx in [35, 48]:
         run_it(face_idx)
-    print("all %d file fetched success" % glb_counter)
 
