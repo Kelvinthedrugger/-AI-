@@ -36,3 +36,8 @@ RUN "MULT_FETCH.py" to use cpu more efficiently
 
     of course, one can add "> record_blah.txt" option
 
+    potential problem of mult_fetch.py:
+
+        the record_blah.txt file might be messed up, since it's now using more threads simultaneously
+
+
