@@ -1,0 +1,28 @@
+
+use "view_faces.py" to confirm the selected faces
+e.g.,
+    run "python view_faces.py 35 48"
+    will print the message below:
+
+        ['35', '48']
+        35: ('😳', 'Flushed face')
+        48: ('😫', 'Tired face')]
+
+    the index represents which face to fetch
+    , according to face_list.pkl
+    , which is the same as the face list on
+    google spread sheet (the dropbox url one)
+
+
+then, run "Plurk_Steal_Data_smiling_face_with_open_mouth.py"
+to fetch the data from plurk.com
+i suppose it would be much faster since jupyter notebook is heavy
+
+e.g.,
+    first, change the index in "for face_idx in [35, 48]"
+    to the index you want
+    then, run "python Plurk_Steal_Data_smiling_face_with_open_mouth.py > record_blah.txt"
+    to redirect the messages that should be printed
+    to "record_blah.txt" file
+
+
