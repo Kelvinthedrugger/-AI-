@@ -1,4 +1,14 @@
 
+## 看這裡就好, 其他的都不用
+## ultimate_fetch.py
+```bash
+python ultimate_fetch.py 1 2 3
+(optional) 加上 > 1_2_3.txt 會將 print() 的結果導到 1_2_3.txt
+```
+
+
+
+
 ## Attention
 
 ### mult_just_in_case.py 不會檢查檔案是否已經存在, 務必再三確認

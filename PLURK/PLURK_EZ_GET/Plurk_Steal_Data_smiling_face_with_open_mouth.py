@@ -39,6 +39,10 @@ assert len(face_list) == 70
 from pathlib import Path
 basedir = Path("faces")
 
+if not basedir.is_dir():
+    basedir.mkdir()
+
+
 # the crawler per se
 
 # init global post counter

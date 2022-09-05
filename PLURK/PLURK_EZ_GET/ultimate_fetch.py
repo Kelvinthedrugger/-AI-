@@ -37,8 +37,12 @@ assert len(face_list) == 70
 from pathlib import Path
 basedir = Path("faces_exp") # change to faces_experiment just in case the quality is weird?
 
-# the crawler per se
+# FUCK
+if not basedir.is_dir():
+    basedir.mkdir()
 
+
+# the crawler per se
 
 #自動化流程，跑這個就對了
 def run_it(face_idx):
@@ -46,7 +50,7 @@ def run_it(face_idx):
     emoji, filename = face_list[face_idx]
 
     # check if file exists or not
-    if P(basedir/(filename+".json")).is_file():
+    if Path(basedir/(filename+".json")).is_file():
         print(f"{filename} has been fetched, skip")
         return
 
@@ -71,9 +75,6 @@ def run_it(face_idx):
     final = []
     for t, el in enumerate(driver.find_elements(By.CSS_SELECTOR,"[class='plurk cboxAnchor divplurk bigplurk plink']")):
         sleep(0.2)
-        #driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        #el = driver.find_elements(By.CSS_SELECTOR,"[class='plurk cboxAnchor divplurk bigplurk plink']")[i]
-        sleep(0.2)
         action = webdriver.common.action_chains.ActionChains(driver)
         action.move_to_element_with_offset(el, (el.size['width'])/2, 0)
         action.click()
@@ -90,7 +91,7 @@ def run_it(face_idx):
                 testtext1 = motherfucker[0].find_element(By.CSS_SELECTOR,"[class='content']").text
                 testtext2 = motherfucker[1].find_element(By.CSS_SELECTOR,"[class='content']").text
                 TD = [[testuser0,testtext0],[testuser1,testtext1],[testuser2,testtext2]]
-                print(TD)
+                print(TD) # we still want to load the text?
                 final.append(TD)
             # move this to front so that we don't have to find the texts of invalid ones?
             # testtext0 = driver.find_element(By.CSS_SELECTOR,"[class='cbox_plurk_holder']").find_element(By.CSS_SELECTOR,"[class='content']").text
@@ -101,17 +102,18 @@ def run_it(face_idx):
                 # print(TD)
                 # final.append(TD)
             else:
-                print("可惜了")
+                #print("可惜了")
+                pass
         except:
-            print("不合條件")
+            #print("不合條件")
+            pass
         sleep(0.2)
         #"add error handling"
         try:
             driver.find_element(By.CSS_SELECTOR, "[class='cbox_close pif-cancel']").click()
         except ElementNotInteractableException:
             pass
-        t+=1
-        print(t)
+        #print(t)
     with open(f"{basedir/filename}.json",'w', encoding = 'utf-8') as yyyyy:
         json.dump(final,yyyyy)
         yyyyy.close()
@@ -133,51 +135,13 @@ if __name__ == "__main__":
     # instead of doing this, we should get all 70 files
     # and exclude the fetched ones
     # remember to exclude the ones from Sam as well?
-    """
-    tar = [int(ele) for ele in sys.argv[1:] if len(ele) > 0 and ele[0] in "0123456789"]
+    tar = [int(ele) for ele in sys.argv[1:] if ele.isnumeric() and len(ele) > 0]
     processes = []
     for face_idx in list(map(int, tar)):
-        #run_it(face_idx)
         p = multiprocessing.Process(target=run_it, args=(face_idx,))
         processes.append(p)
         p.start()
 
-    # Try to maintain len(working queue) == 8
-    #  if one is done, insert new one to that position
-    #   pop the one that's done
-
     for process in processes:
         process.join()
-
-    """
-
-    # below is run all at once version
-    tar = [int(ele) for ele in sys.argv[1:] if len(ele) > 0 and ele[0] in "0123456789"]
-    all_ps = []
-    processes = []
-    for face_idx in list(map(int, tar)):
-        p = multiprocessing.Process(target=run_it, args=(face_idx,))
-        processes.append(p)
-
-    # Try to maintain len(working queue) == 8
-    #  if one is done, insert new one to that position
-    #   pop the one that's done
-    tmpp = []
-    for p in processes:
-        if len(tmpp) < 8:
-            tmpp.append(p)
-        else:
-            all_ps.append(tmpp)
-            tmpp = [] # reset
-
-    # 8 at a time
-    # but not what i mean by 'maintain the queue'
-    for process_list in all_ps:
-        for process in process_list:
-            process.join()
-
-
-    print("mult succeeded!")
-
-
 
