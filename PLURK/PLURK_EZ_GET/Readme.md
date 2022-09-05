@@ -28,6 +28,9 @@ else:
 
 ```
 
+## for command line inputs, add "> blah.txt" to direct the content
+##  that should be printed by print("") in python, to the blah.txt file
+
 
 ## View the emoji & filename
 
