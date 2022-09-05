@@ -7,7 +7,10 @@ basedir = Path("faces")
 def func(fname):
     if not fname.endswith(".json"):
         fname += ".json"
-    with open(f"{basedir/fname}", "r") as f:
+    nn = basedir/fname
+    if not nn.is_file():
+        return None
+    with open(f"{nn}", "r") as f:
         ret = json.load(f)
         f.close()
     return ret
@@ -21,7 +24,7 @@ class G:
 
     def get_fname(self,idx):
         fname =  self.ret[idx][1]
-        print(fname)
+        #print(fname)
         return fname
 
 
@@ -30,11 +33,14 @@ if __name__ == "__main__":
     #recv = [func(ele) for ele in sys.argv[1:]]
     g = G()
     recv = [func(g.get_fname(int(ele))) for ele in sys.argv[1:]]
-    for ele in recv:
-        print("length: %d" % len(ele))
-        if len(ele) < 10:
+    for ele, fname in zip(recv, sys.argv[1:]):
+        print(g.ret[int(fname)][1])
+        if ele is None:
+            print(ele)
+        elif len(ele) < 5:
+            print("length: %d" % len(ele))
             print(ele)
         else:
-            print(ele[:10])
-
+            print("length: %d" % len(ele))
+            print(ele[:5])
 

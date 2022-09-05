@@ -50,7 +50,7 @@ python mult_just_in_case.py 21 3 6 2 7 69 65 49 > 21_3_6_2_7_69_65_49.txt
 
 ## Check if create .json file succeeded
 
-#### will print the first 10 element from the fetched .json file
+#### will print the first 5 element from the fetched .json file
 #### will throw an error if the file doesn't exist
 
 ```python
