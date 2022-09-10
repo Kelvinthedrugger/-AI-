@@ -4,8 +4,6 @@ About
 This repo contains the code snippets for 中技AI competition 2022. Product name: EMO-AI,對話不難──即時線上對話情緒分析 工具
 
 
-<b>(should we hide this?)</b>Notion: https://www.notion.so/AI-_Database-5f3828b51a004e8aa5ef67f2e4190a0e
-
 
 ### twitter_sentiment_kaggle.zip
 
