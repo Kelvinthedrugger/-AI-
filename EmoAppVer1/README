@@ -1,0 +1,9 @@
+#EMO-AI Web APP Introduction 
+
+This is EMO-AI Web APP Version 1
+Using steps: 
+1. Download all files
+2. Download required libraries to run this app [you can see the list of libraries required in app.py]
+3. From cmd, enter the file, then command "python app.py"
+4. enter the local url printed on the cmd. By default, it should be "127.0.0.5000"
+5. Start using the Web APP!
