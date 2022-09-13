@@ -28,11 +28,19 @@ for ele in content: print(ele)
 "For more info, see Plurk folder"
 ```
 
+Or, for how to fetch many posts at once, see [here](https://github.com/Kelvinthedrugger/-AI-/tree/main/emo_nbs/CODE_EXAMPLE_TO_PUSH/Multi_thread_web_scraper)
+
+
 ## Web App
 for details of web-app, see [EmoAppVer1](https://github.com/Kelvinthedrugger/-AI-/tree/main/EmoAppVer1) folder
 
 
+## Model implementation
+### VA-Regression model
+For original implementation, see [here](https://github.com/Kelvinthedrugger/-AI-/blob/main/emo_nbs/EMOAI_EmotionLoopModel_DataProcess_Training.ipynb)
 
+### simplified examples
+see [here](https://github.com/Kelvinthedrugger/-AI-/tree/main/emo_nbs/CODE_EXAMPLE_TO_PUSH)
 
 
 ## Model training Result
