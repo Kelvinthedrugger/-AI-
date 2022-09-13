@@ -1,7 +1,7 @@
-## This folder contains the implementation of our EMO-AI model, including
+## This folder contains the implementation of our EMO-AI model
 
 
-### Context model: text -> [V,A], and
+### Context model: text -> [V,A]
  
 <a target="_blank" id="bt" href = "https://colab.research.google.com/github/Kelvinthedrugger/-AI-/blob/main/emo_nbs/CODE_EXAMPLE_TO_PUSH/EMO_AI_context_model/Gradual_unfreeze_example.ipynb">
 <!---the image--->
@@ -10,7 +10,7 @@
  
   
    
-### VA-Regression model: [V,A] -> [V,A,S,F]
+### VA-Regression model: [V,A] -> [S,V,A,F]
 
  
  
