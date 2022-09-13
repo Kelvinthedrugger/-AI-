@@ -37,7 +37,14 @@ for details of web-app, see [EmoAppVer1](https://github.com/Kelvinthedrugger/-AI
 
 ## Model implementation
 ### VA-Regression model
+
+<a target="_blank" id="bt" href="https://colab.research.google.com/github/Kelvinthedrugger/-AI-/blob/main/emo_nbs/EMOAI_EmotionLoopModel_DataProcess_Training.ipynb">
+<!---the image--->
+<img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+</a>
+
 For original implementation, see [here](https://github.com/Kelvinthedrugger/-AI-/blob/main/emo_nbs/EMOAI_EmotionLoopModel_DataProcess_Training.ipynb)
+
 
 ### simplified examples
 see [here](https://github.com/Kelvinthedrugger/-AI-/tree/main/emo_nbs/CODE_EXAMPLE_TO_PUSH)
