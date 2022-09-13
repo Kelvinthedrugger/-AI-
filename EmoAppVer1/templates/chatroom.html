@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} 聊天室 {% endblock %}</h1>
+<style>
+.grid-container {
+  display: grid;
+  grid-auto-columns: minmax(0,1fr);
+  grid-auto-flow: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  text-align: left;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.testbg{
+	position:fixed;
+}
+</style>
+<div class="grid-container">
+	<div class="item1">
+		<div id="DialogParent">
+		{% for dialog in messagelist %}
+			<h4 class="TheDialogs">{{ dialog }}</h4>
+		{% endfor %}
+		</div>
+
+		<form method="post">
+			<div class="form-group">
+				<label for="title">輸入訊息：</label>
+				<input type="text" name="newmessage"
+					placeholder="Post newmessage" class="form-control"
+					value="{{ request.form['newmessage'] }}">
+				</input>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary">送出訊息</button>
+			</div>
+		</form>
+		<div id="EmoParent">
+			<h4>目前情緒:</h4>
+			<h4 id="shitty">{{emotion[0]}}</h4>
+		</div>
+	</div>
+	<div class="item2">
+		<img src="static/emoartboard.jpg" alt="平面圖" width="600" height="300" class="testbg"/>
+		<canvas id="myCanvas" width="600" height="300" style="border:1px solid #d3d3d3;" class="testbg">
+			Your browser does not support the HTML5 canvas tag.
+		</canvas>
+	</div>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"
+        integrity="sha512-WL6WGKMPBiM9PnHRYIn5YEtq0Z8XP4fkVb4qy7PP4vhmYQErJ/dySyXuFIMDf1eEYCXCrQrMJfkNwKc9gsjTjA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+		var img = new Image();
+		var prevx = 600;
+		var prevy = 300;
+		var theindex = 0;
+
+		//ArrayList<Float>() prevx = new ArrayList<Float>();
+		//ArrayList<Float>() prevy = new ArrayList<Float>();
+		//prevx.Add(0.0f);
+		//prevy.Add(0.0f);
+		//ctx.drawImage(img);
+		
+		var socket = io.connect();
+		socket.on("connect", function()
+		{
+			console.log("連接成功")
+		});
+		socket.on('DialogChanged', function(data) {
+			$('.TheDialogs').remove();
+			$('#shitty').remove();
+			$('#EmoParent').append('<h4 id="shitty">'+data.emotion[0]+'</h4>');
+			//$('#testingforsocket').append('<p>'+data.getClass().getName()+'</p>')
+			data.data.forEach(myFunc);
+			DrawEmotion(data.emotion[1],data.emotion[2]);
+		});
+		const intervala = setInterval(()=>{
+			socket.emit('CheckIfUpdated')
+		},1000);
+		function myFunc(thedatas)
+		{
+			$('#DialogParent').append('<h4 class="TheDialogs">'+thedatas+'</h4>');
+		}
+
+		function DrawEmotion(theposition1,theposition2)
+		{
+			ctx.clearRect(0,0,600,300);
+			/*for(int j = 0;j<xaxis.length;j++)
+			{
+				if(j>=1)
+				{
+					ctx.beginPath();
+					ctx.moveTo(prevx.get(j-1), prevy.get(j-1));
+					ctx.lineTo(prevx.get(j), prevy.get(j));
+					ctx.stroke();
+				}
+				ctx.beginPath();
+				ctx.arc(prevx.get(j), prevy.get(j), 3, 0, 2 * Math.PI);
+				ctx.fillStyle='green';
+				ctx.fill();
+				ctx.stroke();
+			}*/
+			var xaxis1 = theposition1[0]*600;
+			var yaxis1 = 300-(theposition1[1]*300);
+			var xaxis2 = theposition2[0]*600;
+			var yaxis2 = 300-(theposition2[1]*300);
+			//prevx.append(xaxis);
+			//prevy.append(yaxis);
+			ctx.beginPath();
+			ctx.arc(xaxis1, yaxis1, 5, 0, 2 * Math.PI);
+			ctx.fillStyle='red';
+			ctx.fill();
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.arc(xaxis2, yaxis2, 5, 0, 2 * Math.PI);
+			ctx.fillStyle='red';
+			ctx.fill();
+			ctx.stroke();
+
+			if(theindex!=0)
+			{
+				ctx.beginPath();
+				ctx.arc(prevx1, prevy1, 3, 0, 2 * Math.PI);
+				ctx.fillStyle='green';
+				ctx.fill();
+				ctx.stroke();
+				
+				ctx.beginPath();
+				ctx.moveTo(prevx1, prevy1);
+				ctx.lineTo(xaxis1, yaxis1);
+				ctx.stroke();
+
+				ctx.beginPath();
+				ctx.arc(prevx2, prevy2, 3, 0, 2 * Math.PI);
+				ctx.fillStyle='green';
+				ctx.fill();
+				ctx.stroke();
+				
+				ctx.beginPath();
+				ctx.moveTo(prevx2, prevy2);
+				ctx.lineTo(xaxis2, yaxis2);
+				ctx.stroke();
+			}
+
+			prevx1 = xaxis1;
+			prevy1 = yaxis1;
+			prevx2 = xaxis2;
+			prevy2 = yaxis2;
+			theindex+=1;
+		}
+
+		function MyOnClickFunc()
+		{
+			console.log("送出了");
+			var thenewtext = document.getElementsByName("newmessage2")[0].value;
+			socket.emit('emitnewmessage',thenewtext);
+		}
+		
+	});
+</script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} EMOAI：你的對話情緒分析幫手 {% endblock %}</h1>
+    <form method="post">
+    <div class="form-group">
+        <label for="usr">登入FB帳號</label>
+        <input type="text" name="FB_usr"
+               placeholder="Post FB_usr" class="form-control"
+               value="{{ request.form['FB_usr'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="pass">登入FB密碼</label>
+		<input type="password" name="pass"
+               placeholder="Post pass" class="form-control"
+               value="{{ request.form['pass'] }}"></input>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">登入</button>
+    </div>
+</form>
+{% endblock %}
