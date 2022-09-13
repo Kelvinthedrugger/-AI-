@@ -7,7 +7,8 @@ This repo contains the code snippets for 中技AI competition 2022. Product name
 
 ### twitter_sentiment_kaggle.zip
 
-Due to it's large size ( > 50 Mb, over the recommended size of git), if there's an problem, 
+Due to it's large size (> 50 MB, over the recommended size of git)
+if there's an problem, 
 
 a. fetch the local storage
 b. just visit the source (see notion)
@@ -27,7 +28,14 @@ for ele in content: print(ele)
 "For more info, see Plurk folder"
 ```
 
-## Result
+## Web App
+for details of web-app, see [EmoAppVer1](https://github.com/Kelvinthedrugger/-AI-/tree/main/EmoAppVer1) folder
+
+
+
+
+
+## Model training Result
 ### Loss of EMO-AI 語意模型
 
 ![image](https://user-images.githubusercontent.com/59814445/189539001-33bec975-6dc7-4e6e-803b-d02e05ece0a5.png)
