@@ -1,13 +1,4 @@
-# post only!!!!
-# since we now training on {text->[V,A]}
-# , there's no guarantee that the comments will have
-# the same [V,A] to the post
-# so, we fetch the posts
-# Option 1: fetch post + ABA
-# Option 2: fetch post only, don't check for ABA condition
-# Probably option 2, since we want our VA to be as precise as possible?
-
-# BUT IT'S MULTITHREADING
+# IT'S MULTITHREADING
 
 from selenium import webdriver
 from time import sleep
