@@ -13,25 +13,17 @@ import requests
 import json
 from selenium.common.exceptions import *
 
-#先把通知都關掉，不然後面會點不到按鈕
 optionla = Options();
-optionla.add_argument("disable-notifications");
+optionla.add_argument("disable-notifications"); # 先把通知都關掉，不然後面會點不到按鈕
 optionla.add_argument('--headless') # don't render the webpage per se, but more difficult to debug
 optionla.add_argument('--disable-gpu') # prevent weird bug
 #driver = webdriver.Chrome(ChromeDriverManager().install(), options=optionla)
 
-"load face list"
-import pickle
-with open("Face_list.pkl", "rb") as f:
-    face_list = pickle.load(f)
-    f.close()
-assert len(face_list) == 70
-
 # file saving
 from pathlib import Path
-basedir = Path("faces_ANOTHER") # change to faces_experiment just in case the quality is weird?
+basedir = Path("directory_of_interest")
 
-# FUCK
+# Always check for base directory
 if not basedir.is_dir():
     basedir.mkdir()
 
@@ -41,7 +33,6 @@ if not basedir.is_dir():
 #自動化流程，跑這個就對了
 def run_it(face):
 
-    #emoji, filename = face_list[face_idx]
     emoji, filename = face[0], face[1]
     #print(emoji, filename)
     # check if file exists or not
@@ -49,14 +40,13 @@ def run_it(face):
         print(f"{emoji} {filename} has been fetched, skip")
         return
 
-    # make driver local
+    # make driver local to the function to run faster, little trick in python
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=optionla)
 
     TAR_URL = f"https://www.plurk.com/search?q={emoji}&date=2022-09"
     driver.get(TAR_URL)
 
     # "row to the bottom first"
-    # should change to while not bottom: scroll the darn thing?
     # "SUCCEEDED", while not at the buttom, scroll it!
     while len(driver.find_elements(By.XPATH, '//*[@id="result"]//*[@class="status-holder"]//*[@class="button"]')) == 0:
         driver.execute_script("window.scrollTo(0,Math.max(document.documentElement.scrollHeight," + "document.body.scrollHeight,document.documentElement.clientHeight));")
@@ -94,6 +84,7 @@ if __name__ == "__main__":
     "to record the processes"
     processes = []
 
+    # does things (aka, search & fetch) in parallel
     for face in tar:
         p = multiprocessing.Process(target=run_it, args=(face,))
         processes.append(p)
