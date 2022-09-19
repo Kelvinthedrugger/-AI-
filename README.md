@@ -30,6 +30,9 @@ for ele in content: print(ele)
 
 Or, for how to fetch many posts at once, see [here](https://github.com/Kelvinthedrugger/-AI-/tree/main/emo_nbs/CODE_EXAMPLE_TO_PUSH/Multi_thread_web_scraper)
 
+### Emoji to VA model
+Below is the link to how we convert Emoji to VA: https://docs.google.com/spreadsheets/d/1HWSkkt0H6ZIaYyW5Bxj5GuXrdSHE-4qywptP44hW5og/edit?usp=sharing
+
 
 ## Web App
 for details of web-app, see [EmoAppVer1](https://github.com/Kelvinthedrugger/-AI-/tree/main/EmoAppVer1) folder
