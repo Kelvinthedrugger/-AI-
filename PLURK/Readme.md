@@ -119,7 +119,7 @@ click 測試工具 on the app you want (EMO_demo_0 in this case, it's a web craw
 and you'll be able to generate tokens
 
 
-## !別急著關掉驗證碼頁面, 你在測試的時候需要他, shxt
+## !別急著關掉驗證碼頁面, 你在測試的時候需要他
 
 
 ### Docs
